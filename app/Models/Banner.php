@@ -12,6 +12,6 @@ class Banner extends Model
 
     public function news()
     {
-        return $this->belongsTo(Newss::class);
+        return $this->belongsTo(News::class);
     }
 }
