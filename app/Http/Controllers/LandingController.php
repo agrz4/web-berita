@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\News;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -13,6 +16,6 @@ class LandingController extends Controller
         $news = News::orderBy('created_at', 'desc')->get()->take(4);
         $authors = Author::all()->take(5);
 
-        return view('pages.landing', compact('banners', 'featureds', 'news', 'authors'));
+        return view('pages.landing', compact('banners', 'featured', 'news', 'authors'));
     }
 }
